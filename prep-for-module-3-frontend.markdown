@@ -5,13 +5,20 @@
 ### Libraries and Frameworks
 
 * What is a JavaScript framework? [Watch this video.](https://www.youtube.com/watch?v=sXA1zpv4DhA)
-* Why would we want to use a framework? [Read this article.](https://medium.com/dailyjs/the-deepest-reason-why-modern-javascript-frameworks-exist-933b86ebc445)
+  Library: Fewer rules.  Can do what you want.  Call the code whenever you like. (jQuery)
+  Framework: More rules.  Have to follow more structure.  Framework calls code - which calls library. (react)
 
+* Why would we want to use a framework? [Read this article.](https://medium.com/dailyjs/the-deepest-reason-why-modern-javascript-frameworks-exist-933b86ebc445)
+  Batman says the essential fundamental deepest reason to use a framework is: Keeping the UI in sync with the state is hard!
+  Vanilla or even jQuery fragments updating the state and the UI.
+  
+  I really like this explanation: Re-render the whole component: React. When the state of a component changes it renders a DOM in memory and compares it with the existing DOM. Actually since that would be very expensive it renders a Virtual DOM and compares it with the previous Virtual DOM snapshot. Then it calculates the changes and performs the same changes to the real DOM. This process is called reconciliation.
+  
 There are a bunch of JavaScript frameworks out there to use. At Turing, we choose to teach **React** - it's one of the most popular frameworks out there. Actually, a lot of developers will call React a library, which it is...but it can also be described as a framework. It's a little confusing, but the lines are blurred for React. Let's just say that React is a library with some rules and conventions to follow.
 
 Go through these resources to get started learning some React!
 
-* Read over Tyler McGinnis' [React Tutorial: A Comprehensive Guide to learning React.js in 2018](https://tylermcginnis.com/reactjs-tutorial-a-comprehensive-guide-to-building-apps-with-react/)
+* Read over Tyler McGinnis' [React Tutorial: A Comprehensive Guide to learning React.js in 2018](f)
 * Go through the [React tutorial from the docs](https://reactjs.org/tutorial/tutorial.html)
 * Optional: practice building an IdeaBox in React. Think of a mod 1 project, and build that in React!
 
@@ -35,11 +42,22 @@ Workflow is something you will deal with every day on the job. Let's continue st
 Create a GitHub gist to answer these questions in as much detail as possible. Imagine someone is asking these questions in an interview (these are popular interview questions).
 
 * What is a "framework?" And how does it differ from a "library?"
+A framework provides a structure in which to write code.  It has a set of rules that requires format to be followed.  In a framework, the framework calls the code, and the code calls a library.  In a library there are fewer rules.  You can do what you want, when you want.  You can call the code whenever you like. (jQuery)
+
 * Why should we consider using a framework over vanilla JS like you have been doing in mods 1 and 2?
+Using a framework like React allows us to update the DOM and the Data(state) simultaneously. Instead of having to keep the two separate models updated individually, the built in logic makes our lives much easier.
+
 * What is a "component" in React? Why is it useful to have components?
+A component is a reusable piece of code that is responsible for handling one aspect of the program.  For example, we would have an App component that would be the main place where we plugged other components in, like header, main section or footer.
+
 * What are React "props?"
+Props are the properties we pass into components in order to allow them to be dynamic.  It can be individual key value pairs or an entire object.  We have to explicitly pass in props when using a functional component, but I think it is unneccessary to pass it in when using a class that extends a React Component.  
+
 * What is React "state?"
+State is current value of the data in a component.  It can be modified using setState and we have to pass in prevState in order for it to know the previous value and the newly changed value.  
+
 * What does "data down, actions up" mean in React?
+This concept still seems a little hazy for me, but as I understand it we pass down data from parent components (like props) into child components which will actually handle and modify the data, and then pass the changed state back up into the parent component.
 
 _Note:_ As you do your research, stay away from React articles that talk exclusively about "hooks". We will not use hooks in mod 3.
 
